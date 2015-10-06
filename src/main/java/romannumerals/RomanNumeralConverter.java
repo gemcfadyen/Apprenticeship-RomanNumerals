@@ -17,7 +17,36 @@ public class RomanNumeralConverter {
         decimalToRomanNumeral.put(1000, "M");
     }
 
-    public String convert(int decimal) {
-        return decimalToRomanNumeral.get(decimal);
+    public String convert(int input) {
+        String romanNumeral = decimalToRomanNumeral.get(input);
+
+        if (noDirectTranslationFoundFor(romanNumeral)) {
+            String calculatedRomanNumeral = new String();
+
+            while (input > 0) {
+                int largestKeyLessThanDecimal = findLargestKeyWhichIsLessThan(input);
+
+                input = input - largestKeyLessThanDecimal;
+                calculatedRomanNumeral = calculatedRomanNumeral + decimalToRomanNumeral.get(largestKeyLessThanDecimal);
+            }
+
+            romanNumeral = calculatedRomanNumeral;
+        }
+
+        return romanNumeral;
+    }
+
+    private boolean noDirectTranslationFoundFor(String romanNumeral) {
+        return romanNumeral == null;
+    }
+
+    private int findLargestKeyWhichIsLessThan(int decimal) {
+        int currentKeyLessThanDecimal = 1;
+        for (int key : decimalToRomanNumeral.keySet()) {
+            if (key >= currentKeyLessThanDecimal && key <= decimal) {
+                currentKeyLessThanDecimal = key;
+            }
+        }
+        return currentKeyLessThanDecimal;
     }
 }

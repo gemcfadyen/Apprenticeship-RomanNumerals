@@ -48,4 +48,26 @@ public class RomanNumeralConverterTest {
     public void converts1000ToM() {
         assertEquals(converter.convert(1000), "M");
     }
+
+    @Test
+    public void converts2ToII() {
+        assertEquals(converter.convert(2), "II");
+    }
+
+    @Test
+    public void converts3ToIII() {
+        assertEquals(converter.convert(3), "III");
+    }
+
+    @Test
+    public void converts7ToVII() {
+        assertEquals(converter.convert(7), "VII");
+    }
+
+    @Test
+    public void converts20ToXX() {
+        assertEquals(converter.convert(20), "XX");
+    }
+
+
 }
