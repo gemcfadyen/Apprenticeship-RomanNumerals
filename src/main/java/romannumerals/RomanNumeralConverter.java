@@ -12,6 +12,9 @@ public class RomanNumeralConverter {
         decimalToRomanNumeral.put(5, "V");
         decimalToRomanNumeral.put(10, "X");
         decimalToRomanNumeral.put(50, "L");
+        decimalToRomanNumeral.put(100, "C");
+        decimalToRomanNumeral.put(500, "D");
+        decimalToRomanNumeral.put(1000, "M");
     }
 
     public String convert(int decimal) {

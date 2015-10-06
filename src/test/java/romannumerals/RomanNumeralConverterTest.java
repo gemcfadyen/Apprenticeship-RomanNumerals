@@ -33,4 +33,19 @@ public class RomanNumeralConverterTest {
     public void converts50ToL() {
         assertEquals(converter.convert(50), "L");
     }
+
+    @Test
+    public void converts100ToC() {
+        assertEquals(converter.convert(100), "C");
+    }
+
+    @Test
+    public void converts500ToD() {
+        assertEquals(converter.convert(500), "D");
+    }
+
+    @Test
+    public void converts1000ToM() {
+        assertEquals(converter.convert(1000), "M");
+    }
 }
