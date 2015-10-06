@@ -5,7 +5,9 @@ public class RomanNumeralConverter {
 
         if(decimal == 1) {
             return "I";
+        } else if (decimal == 5) {
+            return "V";
         }
-        return "V";
+        return "X";
     }
 }
