@@ -21,13 +21,14 @@ public class RomanNumeralConverter {
         String romanNumeral = decimalToRomanNumeral.get(input);
 
         if (noDirectTranslationFoundFor(romanNumeral)) {
+            int currentDecimal = input;
             String calculatedRomanNumeral = new String();
 
-            while (input > 0) {
-                int largestKeyLessThanDecimal = findLargestKeyWhichIsLessThan(input);
+            while (currentDecimal > 0) {
+                int derivedDecimal = findTheKeyLessThanOrEqualTo(currentDecimal);
 
-                input = input - largestKeyLessThanDecimal;
-                calculatedRomanNumeral = calculatedRomanNumeral + decimalToRomanNumeral.get(largestKeyLessThanDecimal);
+                currentDecimal = currentDecimal - derivedDecimal;
+                calculatedRomanNumeral = calculatedRomanNumeral + decimalToRomanNumeral.get(derivedDecimal);
             }
 
             romanNumeral = calculatedRomanNumeral;
@@ -40,7 +41,7 @@ public class RomanNumeralConverter {
         return romanNumeral == null;
     }
 
-    private int findLargestKeyWhichIsLessThan(int decimal) {
+    private int findTheKeyLessThanOrEqualTo(int decimal) {
         int currentKeyLessThanDecimal = 1;
         for (int key : decimalToRomanNumeral.keySet()) {
             if (key >= currentKeyLessThanDecimal && key <= decimal) {
