@@ -12,4 +12,10 @@ public class RomanNumeralConverterTest {
         assertEquals(converter.convert(1), "I");
     }
 
+    @Test
+    public void converts5ToV() {
+        RomanNumeralConverter converter = new RomanNumeralConverter();
+        assertEquals(converter.convert(5), "V");
+    }
+
 }

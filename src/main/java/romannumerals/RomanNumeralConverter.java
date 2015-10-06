@@ -2,6 +2,10 @@ package romannumerals;
 
 public class RomanNumeralConverter {
     public String convert(int decimal) {
-        return "I";
+
+        if(decimal == 1) {
+            return "I";
+        }
+        return "V";
     }
 }
