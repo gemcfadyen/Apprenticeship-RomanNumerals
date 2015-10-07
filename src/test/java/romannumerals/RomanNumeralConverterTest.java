@@ -69,5 +69,39 @@ public class RomanNumeralConverterTest {
         assertEquals(converter.convert(20), "XX");
     }
 
+    @Test
+    public void converts4ToIV() {
+        assertEquals(converter.convert(4), "IV");
+    }
 
+    @Test
+    public void converts9ToIX() {
+        assertEquals(converter.convert(9), "IX");
+    }
+
+
+    @Test
+    public void converts90ToXC() {
+        assertEquals(converter.convert(90), "XC");
+    }
+
+    @Test
+    public void converts900ToCM() {
+        assertEquals(converter.convert(900), "CM");
+    }
+
+    @Test
+    public void convert990ToCMXC() {
+        assertEquals(converter.convert(990), "CMXC");
+    }
+
+    @Test
+    public void converts1990ToMCMXC() {
+        assertEquals(converter.convert(1990), "MCMXC");
+    }
+
+    @Test
+    public void converts3999ToMMMCMXCIX() {
+        assertEquals(converter.convert(3999), "MMMCMXCIX");
+    }
 }
