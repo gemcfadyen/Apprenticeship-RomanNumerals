@@ -9,20 +9,10 @@ public class RomanNumeralConverter {
     private Map<Integer, List<Integer>> subtractionRules;
 
     public RomanNumeralConverter() {
-        decimalToRomanNumeral = new HashMap();
-        decimalToRomanNumeral.put(1, "I");
-        decimalToRomanNumeral.put(5, "V");
-        decimalToRomanNumeral.put(10, "X");
-        decimalToRomanNumeral.put(50, "L");
-        decimalToRomanNumeral.put(100, "C");
-        decimalToRomanNumeral.put(500, "D");
-        decimalToRomanNumeral.put(1000, "M");
-
-        subtractionRules = new HashMap();
-        subtractionRules.put(1, asList(5, 10));
-        subtractionRules.put(10, asList(50, 100));
-        subtractionRules.put(100, asList(500, 1000));
+        initialiseStandardConversions();
+        initialiseDataForSubtractionRules();
     }
+
 
     public String convert(int input) {
         String romanNumeral = decimalToRomanNumeral.get(input);
@@ -56,6 +46,25 @@ public class RomanNumeralConverter {
         return romanNumeral;
     }
 
+
+    private void initialiseStandardConversions() {
+        decimalToRomanNumeral = new HashMap();
+        decimalToRomanNumeral.put(1, "I");
+        decimalToRomanNumeral.put(5, "V");
+        decimalToRomanNumeral.put(10, "X");
+        decimalToRomanNumeral.put(50, "L");
+        decimalToRomanNumeral.put(100, "C");
+        decimalToRomanNumeral.put(500, "D");
+        decimalToRomanNumeral.put(1000, "M");
+    }
+
+    private void initialiseDataForSubtractionRules() {
+        subtractionRules = new HashMap();
+        subtractionRules.put(1, asList(5, 10));
+        subtractionRules.put(10, asList(50, 100));
+        subtractionRules.put(100, asList(500, 1000));
+    }
+    
     private String applySubtractionRule(int inputInUnitForm) {
 
         for (Map.Entry<Integer, List<Integer>> subtractionEntry : subtractionRules.entrySet()) {
