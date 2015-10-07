@@ -13,12 +13,26 @@ public class RomanNumeralConverter {
         initialiseDataForSubtractionRules();
     }
 
+    /**
+     * while !- 0
+     * do direct lookup
+     * do special cases
+     * do usual
+     */
+
+    private String findDirectConversionIfAvailable(int input) {
+        String romanNumeral = decimalToRomanNumeral.get(input);
+        if (noDirectTranslationFoundFor(romanNumeral)) {
+            romanNumeral = "";
+        }
+        return romanNumeral;
+    }
 
     public String convert(int input) {
-        String romanNumeral = decimalToRomanNumeral.get(input);
+        int currentDecimal = input;
+        String romanNumeral = decimalToRomanNumeral.get(currentDecimal);
 
         if (noDirectTranslationFoundFor(romanNumeral)) {
-            int currentDecimal = input;
             String calculatedRomanNumeral = new String();
 
             while (currentDecimal > 0) {
