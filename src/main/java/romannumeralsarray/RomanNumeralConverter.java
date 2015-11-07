@@ -7,12 +7,11 @@ public class RomanNumeralConverter {
 
         String romanNumeral = "";
 
-        if (decimal >= decimals[0]) {
-            romanNumeral = numerals[0];
-        } else if (decimal == decimals[1]) {
-            romanNumeral = numerals[1];
-        } else if (decimal >= decimals[2]) {
-            romanNumeral = numerals[2];
+        for(int i = 0; i < decimals.length; i++) {
+            if (decimal >= decimals[i]) {
+                romanNumeral = numerals[i];
+                decimal -= decimals[i];
+            }
         }
         return romanNumeral;
     }
