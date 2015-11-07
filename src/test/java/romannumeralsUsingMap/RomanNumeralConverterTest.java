@@ -1,7 +1,8 @@
-package romannumerals;
+package romannumeralsUsingMap;
 
 import org.junit.Before;
 import org.junit.Test;
+import romannumeralsmap.RomanNumeralConverter;
 
 import static org.junit.Assert.assertEquals;
 
