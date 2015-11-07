@@ -20,4 +20,9 @@ public class RomanNumeralConverterTest {
     public void converts5() {
         assertEquals("V", RomanNumeralConverter.converts(5));
     }
+
+    @Test
+    public void converts4() {
+        assertEquals("IV", RomanNumeralConverter.converts(4));
+    }
 }
