@@ -3,13 +3,14 @@ package romannumeralsarray;
 public class RomanNumeralConverter {
     public static String converts(int decimal) {
 
+        String romanNumeral = "";
         if (decimal >= 5) {
-            return "V";
+            romanNumeral = "V";
         } else if (decimal == 4) {
-            return "IV";
+            romanNumeral = "IV";
         } else if (decimal >= 1) {
-            return "I";
+            romanNumeral = "I";
         }
-        return "";
+        return romanNumeral;
     }
 }
