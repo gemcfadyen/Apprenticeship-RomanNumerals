@@ -10,4 +10,9 @@ public class RomanNumeralConverterTest {
     public void converts0() {
         assertEquals("", RomanNumeralConverter.converts(0));
     }
+
+    @Test
+    public void converts1() {
+        assertEquals("I", RomanNumeralConverter.converts(1));
+    }
 }
