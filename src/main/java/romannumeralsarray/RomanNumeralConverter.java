@@ -8,8 +8,8 @@ public class RomanNumeralConverter {
         String romanNumeral = "";
 
         for(int i = 0; i < decimals.length; i++) {
-            if (decimal >= decimals[i]) {
-                romanNumeral = numerals[i];
+            while (decimal >= decimals[i]) {
+                romanNumeral += numerals[i];
                 decimal -= decimals[i];
             }
         }
